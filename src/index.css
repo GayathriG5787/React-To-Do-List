@@ -1,0 +1,178 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5; /* Adding a background color */
+  color: #333; /* Default text color */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid var(--primary-color);
+  margin: auto;
+  background-color: white; /* Clean background */
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: aliceblue;
+  display: grid;
+  place-content: center;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+ul li::before {
+  content: "\200B";
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background-color: #f1f1f1;
+  border-radius: 8px; /* Soft corners */
+}
+
+.item:first-child {
+  margin-top: 0;
+}
+
+.item input[type="checkbox"] {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.item input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
+.item > label {
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.item svg {
+  width: 2rem;
+  height: 2rem;
+  color: steelblue;
+  cursor: pointer;
+}
+
+.item svg:focus,
+.item svg:hover {
+  color: red;
+  outline: none;
+}
+
+.addForm,
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  padding: 0 1rem 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.addForm label,
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.addForm input[type='text'],
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+}
+
+.addForm input[type='text']:focus,
+.searchForm input[type='text']:focus {
+  border-color: var(--primary-color);
+}
+
+button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button:focus,
+button:hover {
+  color: white;
+  background-color: limegreen;
+  outline: none;
+}
+
+button:active {
+  background-color: darkgreen;
+}
+
+/* Define custom properties (CSS variables) */
+:root {
+  --primary-color: mediumblue;
+  --secondary-color: limegreen;
+  --highlight-color: red;
+}
